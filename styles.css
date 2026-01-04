@@ -20,7 +20,7 @@ body {
     z-index: -2;
 }
 
-/* Logos Container - Top-left in header */
+/* Logos - Top-left */
 .logos-container {
     display: flex;
     justify-content: flex-start;
@@ -33,8 +33,6 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    padding-top: 0;
-    margin-bottom: 0;
 }
 
 .collab-logo {
@@ -46,7 +44,7 @@ body {
 }
 
 .silk-logo {
-    max-width: 65px; /* Balanced smaller size */
+    max-width: 65px;
 }
 
 .footer-logos {
@@ -59,73 +57,7 @@ body {
     display: none;
 }
 
-.dev-photo {
-    max-width: 150px;
-    height: auto;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    opacity: 0.9;
-    margin: 20px;
-    box-sizing: border-box;
-}
-
-.dev-name {
-    font-family: 'Cairo', sans-serif;
-    font-size: 1.8em;
-    font-weight: 700;
-    margin: 20px 0 0 20px;
-    vertical-align: middle;
-    display: inline-block;
-    box-sizing: border-box;
-}
-
-.developer-profile {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
-
-.dev-description {
-    max-width: 600px;
-    margin: 0 auto 20px;
-    font-size: 1.1em;
-    line-height: 1.6;
-    box-sizing: border-box;
-}
-
-.app-logo {
-    max-width: 80px;
-    margin-right: 20px;
-    vertical-align: top;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-}
-
-.app-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
-    box-sizing: border-box;
-}
-
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    box-sizing: border-box;
-}
-
-.store-button {
-    height: 60px;
-    width: auto;
-    transition: opacity 0.3s;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
-}
-
+/* Sections */
 .header, .steps, .story, .footer {
     min-height: 100vh;
     display: flex;
@@ -139,7 +71,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Give header more top space for logos */
 .header {
     padding-top: 120px;
 }
@@ -164,60 +95,27 @@ h2 {
     box-sizing: border-box;
 }
 
-/* Steps Section */
-.steps {
-    position: relative;
-    box-sizing: border-box;
-}
-
+/* Steps Section - Wider text, line/numbers shifted right */
 .steps-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     direction: rtl;
 }
 
-.steps-images {
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.step-image {
-    max-width: 200px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-}
-
-.placeholder {
-    width: 200px;
-    height: 200px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-}
-
 .steps-container {
+    width: 100%;
     position: relative;
-    width: 60%;
-    max-width: 500px;
-    margin: 0;
-    box-sizing: border-box;
+    padding-right: 80px; /* Shifts line and numbers right */
 }
 
 .steps-container::before {
     content: '';
     position: absolute;
-    right: 15px; /* RTL adjustment */
+    right: 50px; /* Shifted further right */
     top: 0;
     bottom: 0;
-    width: 2px;
+    width: 3px;
     background: white;
     z-index: 0;
 }
@@ -225,41 +123,25 @@ h2 {
 .steps ol {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: relative;
-    z-index: 1;
+    margin: 0;
 }
 
 .steps li {
     position: relative;
-    padding: 30px 40px 30px 20px;
-    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-bottom: 60px;
     text-align: right;
     direction: rtl;
-    margin: 0 0 20px;
-    font-size: 1.15em;
-    line-height: 1.7;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3), 2px 2px 6px rgba(0, 0, 0, 0.2);
-    white-space: pre-wrap;
-    box-sizing: border-box;
-}
-
-.steps li strong {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 1.3em;
-    font-weight: 800;
 }
 
 .steps li span {
     position: absolute;
-    right: 0; /* RTL adjustment */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
+    right: 35px; /* Aligned with line */
+    top: 10px;
+    width: 40px;
+    height: 40px;
     background: white;
     border-radius: 50%;
     color: #da17eb;
@@ -267,8 +149,32 @@ h2 {
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    font-size: 1.4em;
     z-index: 2;
-    box-sizing: border-box;
+}
+
+.step-content {
+    flex: 1;
+    max-width: 700px;
+    padding-left: 30px;
+    line-height: 1.7;
+    font-size: 1.2em;
+}
+
+.step-content strong {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: 800;
+}
+
+.step-photo {
+    width: 220px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    margin-left: 40px;
+    flex-shrink: 0;
 }
 
 /* WhatsApp Button */
@@ -289,7 +195,7 @@ h2 {
     min-height: 57px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     box-sizing: border-box;
     position: relative;
@@ -323,48 +229,27 @@ h2 {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Smaller text for specific button */
 .smaller-text span {
     font-size: 1.1em !important;
 }
 
-/* Final CTA text */
+/* Final CTA */
 .final-cta-text {
     max-width: 800px;
-    margin: 0 auto 40px;
+    margin: 0 auto 30px;
     font-size: 1.2em;
     line-height: 1.6;
 }
 
-.story {
-    padding: 60px 20px;
-    box-sizing: border-box;
+.note-text {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1em;
+    opacity: 0.9;
+    font-style: italic;
 }
 
-.site-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.1);
-    text-align: center;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.site-footer p {
-    margin: 10px 0 0;
-    font-size: 0.9em;
-    box-sizing: border-box;
-}
-
-footer {
-    padding: 40px 20px;
-    box-sizing: border-box;
-}
-
-/* Video Thumbnail */
+/* Video & Footer */
 .video-thumbnail-link {
     display: block;
     margin: 40px auto;
@@ -385,19 +270,23 @@ footer {
     display: block;
 }
 
-.video-container {
-    margin: 20px 0;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.video-container iframe {
-    max-width: 100%;
+.site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    text-align: center;
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
 }
 
+.site-footer p {
+    margin: 10px 0 0;
+    font-size: 0.9em;
+}
+
+/* Mobile */
 @media (max-width: 600px) {
     .header {
         padding-top: 100px;
@@ -426,50 +315,51 @@ footer {
         font-size: 1.8em;
     }
 
-    .steps-wrapper {
-        flex-direction: column-reverse;
-    }
-
-    .steps-images {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 30px;
-    }
-
-    .step-image, .placeholder {
-        max-width: 32%;
-        height: 150px;
-    }
-
     .steps-container {
+        padding-right: 0;
+    }
+
+    .steps-container::before {
+        right: 20px;
+    }
+
+    .steps li {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .steps li span {
+        right: 5px;
+        top: 0;
+    }
+
+    .step-content {
+        max-width: 100%;
+        padding-left: 0;
+        margin-top: 50px;
+    }
+
+    .step-photo {
         width: 100%;
+        max-width: 300px;
+        margin-left: 0;
+        margin-top: 20px;
+        align-self: center;
     }
 
     .video-thumbnail-link {
         max-width: 90%;
-        margin: 30px auto;
     }
 
-    .whatsapp-btn .whatsapp-icon {
-        left: 12px;
-        height: 1.6em;
-        width: 1.6em;
-    }
-
-    .final-cta-text {
-        font-size: 1.1em;
+    .final-cta-text, .note-text {
+        font-size: 1em;
         padding: 0 20px;
     }
 }
 
 @media (max-width: 375px) {
-    .bts-logo {
+    .bts-logo, .silk-logo {
         max-width: 70px;
-    }
-
-    .silk-logo {
-        max-width: 45px;
     }
 
     .header {
