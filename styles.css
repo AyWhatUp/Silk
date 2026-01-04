@@ -95,7 +95,7 @@ h2 {
     box-sizing: border-box;
 }
 
-/* Steps Section - Wider text, line/numbers shifted right */
+/* Steps Section */
 .steps-wrapper {
     width: 100%;
     max-width: 1200px;
@@ -106,18 +106,18 @@ h2 {
 .steps-container {
     width: 100%;
     position: relative;
-    padding-right: 80px; /* Shifts line and numbers right */
+    padding-right: 100px; /* Comfortable space for number + photo */
 }
 
 .steps-container::before {
     content: '';
     position: absolute;
-    right: 50px; /* Shifted further right */
+    right: 70px;
     top: 0;
     bottom: 0;
     width: 3px;
     background: white;
-    z-index: 0;
+    opacity: 0.6;
 }
 
 .steps ol {
@@ -131,17 +131,22 @@ h2 {
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     text-align: right;
     direction: rtl;
 }
 
+.step-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    flex-shrink: 0;
+}
+
 .steps li span {
-    position: absolute;
-    right: 35px; /* Aligned with line */
-    top: 10px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: white;
     border-radius: 50%;
     color: #da17eb;
@@ -149,32 +154,32 @@ h2 {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 1.4em;
-    z-index: 2;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.step-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
 .step-content {
     flex: 1;
     max-width: 700px;
-    padding-left: 30px;
-    line-height: 1.7;
+    padding-right: 40px;
+    line-height: 1.8;
     font-size: 1.2em;
 }
 
 .step-content strong {
     display: block;
     margin-bottom: 15px;
-    font-size: 1.4em;
+    font-size: 1.5em;
     font-weight: 800;
-}
-
-.step-photo {
-    width: 220px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    margin-left: 40px;
-    flex-shrink: 0;
 }
 
 /* WhatsApp Button */
@@ -320,31 +325,34 @@ h2 {
     }
 
     .steps-container::before {
-        right: 20px;
+        right: 30px;
     }
 
     .steps li {
         flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
+        text-align: center;
+    }
+
+    .step-header {
+        width: auto;
+        margin-bottom: 20px;
     }
 
     .steps li span {
-        right: 5px;
-        top: 0;
-    }
-
-    .step-content {
-        max-width: 100%;
-        padding-left: 0;
-        margin-top: 50px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.4em;
     }
 
     .step-photo {
-        width: 100%;
-        max-width: 300px;
-        margin-left: 0;
-        margin-top: 20px;
-        align-self: center;
+        width: 120px;
+        height: 120px;
+    }
+
+    .step-content {
+        padding-right: 0;
+        max-width: 100%;
     }
 
     .video-thumbnail-link {
