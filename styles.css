@@ -268,7 +268,7 @@ h2 {
     font-style: italic;
 }
 
-/* New Guarantee Text */
+/* Guarantee Text - White only, bold + underline */
 .guarantee-text {
     max-width: 800px;
     margin: 40px auto 30px;
@@ -278,8 +278,8 @@ h2 {
 }
 
 .guarantee-text strong u {
-    color: #ffeb3b;
     font-weight: 900;
+    /* No color change - stays white */
 }
 
 /* Embedded Video Container (Responsive) */
