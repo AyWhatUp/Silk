@@ -9,6 +9,12 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3), 2px 2px 6px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     font-weight: 600;
+    width: 100%;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 #background-canvas {
@@ -106,7 +112,7 @@ h2 {
 .steps-container {
     width: 100%;
     position: relative;
-    padding-right: 100px; /* Comfortable space for number + photo */
+    padding-right: 100px; /* Space for number + photo on desktop */
 }
 
 .steps-container::before {
@@ -238,6 +244,14 @@ h2 {
     font-size: 1.1em !important;
 }
 
+/* Phone number display */
+.phone-number {
+    font-size: 1em;
+    color: #d0d0d0;
+    margin-top: 8px;
+    opacity: 0.9;
+}
+
 /* Final CTA */
 .final-cta-text {
     max-width: 800px;
@@ -291,8 +305,13 @@ h2 {
     font-size: 0.9em;
 }
 
-/* Mobile */
+/* Mobile Fixes */
 @media (max-width: 600px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
     .header {
         padding-top: 100px;
     }
@@ -320,18 +339,20 @@ h2 {
         font-size: 1.8em;
     }
 
+    /* Remove vertical line on mobile */
     .steps-container {
         padding-right: 0;
     }
 
     .steps-container::before {
-        right: 30px;
+        display: none;
     }
 
     .steps li {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-bottom: 60px;
     }
 
     .step-header {
@@ -362,6 +383,10 @@ h2 {
     .final-cta-text, .note-text {
         font-size: 1em;
         padding: 0 20px;
+    }
+
+    .phone-number {
+        font-size: 0.95em;
     }
 }
 
